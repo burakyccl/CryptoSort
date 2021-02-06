@@ -24,10 +24,11 @@
   - Retrofit (API to interface)
   - GlideToVector (svg to showable)
   
+  
+  ---------------------------------------
+  
+#### Promotion Video == https://youtu.be/CHKW3lRvSPQ
+
   ---------------------------------------
 
-![Screen shot]()
-##
-![Screen shot]()
-##
-![Screen shot]()
+![Screen shot](https://raw.githubusercontent.com/burakyccl/CryptoSort/main/ss.jpg)
