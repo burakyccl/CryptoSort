@@ -8,11 +8,12 @@
 
 ##
 #### Features
-  - Show cryptocurrencies aysnc with icons.
+  - Show cryptocurrencies aysnc with icons
+  - Search cryptocurrency
   - Firebase register, login and forgot my password
   - Add cryptocurrency to your favorites
   - Sort cryptocurrencies by price or by alphabetical order
-  - Referral button to cryptocurrency Binance page.
+  - Referral button to cryptocurrency Binance page
 
 
 #### Used Technologies
