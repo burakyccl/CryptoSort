@@ -25,8 +25,8 @@
   
   ---------------------------------------
 
-![Screen shot](https://raw.githubusercontent.com/burakyccl/eCommerce-FormApp/main/gif1.gif)
+![Screen shot]()
 ##
-![Screen shot](https://raw.githubusercontent.com/burakyccl/eCommerce-FormApp/main/gif2.gif)
+![Screen shot]()
 ##
-![Screen shot](https://raw.githubusercontent.com/burakyccl/eCommerce-FormApp/main/gif3.gif)
+![Screen shot]()
