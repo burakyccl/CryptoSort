@@ -6,6 +6,11 @@
  
 > I have developed this application for Java course final term project. 
 
+----------------------
+> UPDATE: Favorites no longer stays in only local memory. Added Firebase realtime database for favorite currencies so you can track your currencies on every device. 
+
+
+
 ##
 #### Features
   - Show cryptocurrencies aysnc with icons
@@ -18,8 +23,8 @@
 
 #### Used Technologies
   - Android Studio
-  - Firebase
-  - SQLite (fav status)
+  - Firebase (Authorization & cloud fav db)
+  - SQLite (local fav db)
   - RxJava (aysnc)
   - Retrofit (API to interface)
   - GlideToVector (svg to showable)
