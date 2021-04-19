@@ -20,8 +20,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import org.json.JSONObject;
 import org.w3c.dom.Text;
+
+import java.util.Iterator;
+
+import database.FavDB;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -39,20 +47,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mAuth = FirebaseAuth.getInstance();
 
-        registerBtn = (TextView) findViewById(R.id.loginRegister);
+        registerBtn = findViewById(R.id.loginRegister);
         registerBtn.setOnClickListener(this);
 
-        forgotPwBtn = (TextView) findViewById(R.id.loginForgotPw);
+        forgotPwBtn = findViewById(R.id.loginForgotPw);
         forgotPwBtn.setOnClickListener(this);
 
-        loginBtn = (Button) findViewById(R.id.loginButton);
+        loginBtn = findViewById(R.id.loginButton);
         loginBtn.setOnClickListener(this);
 
 
-        editTextEmail = (EditText) findViewById(R.id.loginEmail);
-        editTextPassword = (EditText) findViewById(R.id.loginPassword);
+        editTextEmail = findViewById(R.id.loginEmail);
+        editTextPassword = findViewById(R.id.loginPassword);
 
-        progressBar = (ProgressBar) findViewById(R.id.loginProgressbar);
+        progressBar = findViewById(R.id.loginProgressbar);
     }
 
     @Override

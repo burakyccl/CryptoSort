@@ -38,6 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private FavDB favDB;
 
     private String[] colors={"#D5EFF5","#F5CFEB","#C9F5E0","#F5D1B0", "#C6F5BC", "#F5EAB0", "#C9F5E0", "#97DBF6", "#F5E6BC", "#E6D5F5"};
+    
     public RecyclerViewAdapter(ArrayList<CryptoModel> cryptoList, Context context) {
         this.cryptoList = cryptoList;
         cryptoListFull = new ArrayList<CryptoModel>(cryptoList);
@@ -50,11 +51,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RowHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         favDB = new FavDB(mContext);
-        SharedPreferences prefs = mContext.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        boolean firstStart = prefs.getBoolean("firstStart", true);
-        if (firstStart){
-            createTableOnFirstStart();
-        }
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.row_layout,parent,false);
@@ -173,15 +169,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             notifyDataSetChanged();
         }
     };
-
-    private void createTableOnFirstStart() {
-        favDB.insertEmpty();
-
-        SharedPreferences prefs = mContext.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("firstStart", false);
-        editor.apply();
-    }
 
     private void readFavCursorData(CryptoModel cryptoModel, RowHolder holder) {
         cryptoFavList = new ArrayList<CryptoModel>(cryptoList);

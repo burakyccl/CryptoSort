@@ -28,12 +28,6 @@ public class FavDB extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    //create empty table
-    public void insertEmpty() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        db.insert(TABLE_NAME,null , cv);
-    }
 
     public void insertIntoTheDatabase(String item_id, String fav_status){
         SQLiteDatabase db;
@@ -42,26 +36,32 @@ public class FavDB extends SQLiteOpenHelper{
         String sql = "INSERT or IGNORE INTO " + TABLE_NAME+ " ("+ KEY_ID + ", " + FAVORITE_STATUS + ")"
                 + " VALUES "+ "(" + "'" +item_id + "'," + "'" +fav_status + "'"  +")";
         db.execSQL(sql);
-        Log.d("FavDB Status", item_id + ", favstatus - " + fav_status + " - . ");
     }
 
-    public Cursor read_fav_status(String id){
-        SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "select * from " + TABLE_NAME + " where " + KEY_ID + "='" + id + "'";
-        return db.rawQuery(sql,null,null);
+    public void clearTable(){
+        SQLiteDatabase db;
+        db = this.getWritableDatabase();
+
+        String sql = "DELETE FROM " + TABLE_NAME;
+        db.execSQL(sql);
+    }
+
+    public void add_fav(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "UPDATE " + TABLE_NAME + " SET  " + FAVORITE_STATUS + " ='1' WHERE " + KEY_ID + "='" + id + "'";
+        db.execSQL(sql);
     }
 
     public void remove_fav(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         String sql = "UPDATE " + TABLE_NAME + " SET  " + FAVORITE_STATUS + " ='0' WHERE " + KEY_ID + "='" + id + "'";
         db.execSQL(sql);
-        Log.d("remove", id.toString());
     }
-    public void add_fav(String id){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String sql = "UPDATE " + TABLE_NAME + " SET  " + FAVORITE_STATUS + " ='1' WHERE " + KEY_ID + "='" + id + "'";
-        db.execSQL(sql);
-        Log.d("addtofav", id.toString());
+
+    public Cursor read_fav_status(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "select * from " + TABLE_NAME + " where " + KEY_ID + "='" + id + "'";
+        return db.rawQuery(sql,null,null);
     }
 
     public Cursor select_all_fav_list(){

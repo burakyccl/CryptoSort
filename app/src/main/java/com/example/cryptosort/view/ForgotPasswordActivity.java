@@ -30,10 +30,10 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        editTextEmail = (EditText) findViewById(R.id.forgotEmail);
-        resetPwButton = (Button) findViewById(R.id.forgotButton);
-        forgotGoBack = (Button) findViewById(R.id.forgotGoback);
-        progressBar = (ProgressBar) findViewById(R.id.forgotProgressBar);
+        editTextEmail = findViewById(R.id.forgotEmail);
+        resetPwButton = findViewById(R.id.forgotButton);
+        forgotGoBack = findViewById(R.id.forgotGoback);
+        progressBar = findViewById(R.id.forgotProgressBar);
 
         forgotGoBack.setOnClickListener(this);
 

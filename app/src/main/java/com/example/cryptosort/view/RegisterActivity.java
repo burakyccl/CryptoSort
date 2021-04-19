@@ -39,17 +39,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         mAuth = FirebaseAuth.getInstance();
 
-        registerGoback = (Button) findViewById(R.id.registerGoback);
+        registerGoback = findViewById(R.id.registerGoback);
         registerGoback.setOnClickListener(this);
 
-        registerButton = (Button) findViewById(R.id.registerButton);
+        registerButton =  findViewById(R.id.registerButton);
         registerButton.setOnClickListener(this);
 
-        editTextEmail = (EditText) findViewById(R.id.registerEmail);
-        editTextPassword = (EditText) findViewById(R.id.registerPassword);
-        editTextRePassword = (EditText) findViewById(R.id.registerRePassword);
+        editTextEmail = findViewById(R.id.registerEmail);
+        editTextPassword = findViewById(R.id.registerPassword);
+        editTextRePassword = findViewById(R.id.registerRePassword);
 
-        progressBar = (ProgressBar) findViewById(R.id.registerProgressbar);
+        progressBar = findViewById(R.id.registerProgressbar);
     }
 
     @Override
